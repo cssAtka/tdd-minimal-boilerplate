@@ -1,0 +1,9 @@
+TODO text
+1. one-line string input
+- string to array converter method
+- test the return value is array
+
+2. multi-line string input
+- string to array converter
+- test with deepEqual
+

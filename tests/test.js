@@ -9,18 +9,25 @@ suite('test project', function() {
 		this.testClass = new TestClass();
 	});
 
-	var testData1 = '',
-		testData2 = '100,982,444,990,1',
-		testData3 = 'Mark,Anthony,marka@lib.de';
+	var testData11 = 'a,b,c',
+		testData12 = '100,982,444,990,1',
+		testData13 = 'Mark,Anthony,marka@lib.de',
+		testData21 = '211,22,35\n10,20,33',
+		testData22 = 'luxembourg,kennedy,44\nbudapest,expo ter,5-7\ngyors,fo utca,9';
 
 	test('test request 1: one-line string input', function() {
-		var array1 = this.testClass.strToArray(testData1),
-			array2 = this.testClass.strToArray(testData2),
-			array3 = this.testClass.strToArray(testData3);
+		var array1 = this.testClass.strToArray(testData11),
+			array2 = this.testClass.strToArray(testData12),
+			array3 = this.testClass.strToArray(testData13);
 
 		assert.isArray(array1);
 		assert.isArray(array2);
 		assert.isArray(array3);
+	});
+
+	test('test request 2: multi-line string input', function() {
+		var obj1 = this.testClass.multiArray(testData21);
+		assert.deepEqual(obj1, [['211','22','35'], ['10','20','33']]);
 	});
 
 	teardown(function() {
