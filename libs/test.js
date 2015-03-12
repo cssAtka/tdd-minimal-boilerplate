@@ -4,16 +4,18 @@
  * @constructor
  */
 var TestClass = function() {
-	this.a = 0;
+
 };
 
 /**
- * Check is this a 1000ms timeout.
+ * String to array converter
+ *
+ * @method strToArray
+ * @param {string} testData
+ *
  */
-TestClass.prototype.test = function() {
-	setTimeout(function() {
-		this.a = 1;
-	}.bind(this), 1000);
+TestClass.prototype.strToArray = function(testData) {
+	return testData.split(',');
 };
 
 module.exports = TestClass;
