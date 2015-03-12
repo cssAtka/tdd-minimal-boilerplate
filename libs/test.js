@@ -9,7 +9,6 @@ var TestClass = function() {
 
 /**
  * Check is this a 1000ms timeout.
- *
  */
 TestClass.prototype.test = function() {
 	setTimeout(function() {
